@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,9 +15,12 @@
 		84411C5623C0A32B009EEC20 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411C5523C0A32B009EEC20 /* CommentsViewController.swift */; };
 		84411C5823C0A420009EEC20 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411C5723C0A420009EEC20 /* CommentTableViewCell.swift */; };
 		84411C6023C0A750009EEC20 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411C5F23C0A750009EEC20 /* Comment.swift */; };
+		84411C6423C0A9CB009EEC20 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411C6323C0A9CB009EEC20 /* NetworkService.swift */; };
+		85EDF91252FAC586ECD7DA4F /* Pods_Comments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E78B243CEE2D7EB90909DA9 /* Pods_Comments.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5E78B243CEE2D7EB90909DA9 /* Pods_Comments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Comments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		84411C4023C0878A009EEC20 /* Comments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Comments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84411C4323C0878A009EEC20 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84411C4523C0878A009EEC20 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -28,6 +31,9 @@
 		84411C5523C0A32B009EEC20 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		84411C5723C0A420009EEC20 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		84411C5F23C0A750009EEC20 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		84411C6323C0A9CB009EEC20 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B3782FAF0EFCC7A4B2002A04 /* Pods-Comments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comments.debug.xcconfig"; path = "Target Support Files/Pods-Comments/Pods-Comments.debug.xcconfig"; sourceTree = "<group>"; };
+		CEA7A4C0DE8451E235515C3A /* Pods-Comments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comments.release.xcconfig"; path = "Target Support Files/Pods-Comments/Pods-Comments.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85EDF91252FAC586ECD7DA4F /* Pods_Comments.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DF4B6DA36BC7C2574CA1E72 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3782FAF0EFCC7A4B2002A04 /* Pods-Comments.debug.xcconfig */,
+				CEA7A4C0DE8451E235515C3A /* Pods-Comments.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		84411C3723C0878A009EEC20 = {
 			isa = PBXGroup;
 			children = (
 				84411C4223C0878A009EEC20 /* Comments */,
 				84411C4123C0878A009EEC20 /* Products */,
+				2DF4B6DA36BC7C2574CA1E72 /* Pods */,
+				F3F334FFC896E31A6B4CBEBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +82,7 @@
 				84411C5B23C0A4F3009EEC20 /* Model */,
 				84411C5A23C0A4EA009EEC20 /* View */,
 				84411C5923C0A4DB009EEC20 /* Controller */,
+				84411C6223C0A99F009EEC20 /* NetworkService */,
 				84411C4A23C0878C009EEC20 /* Assets.xcassets */,
 				84411C4F23C0878C009EEC20 /* Info.plist */,
 			);
@@ -97,6 +116,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		84411C6223C0A99F009EEC20 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				84411C6323C0A9CB009EEC20 /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		F3F334FFC896E31A6B4CBEBB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E78B243CEE2D7EB90909DA9 /* Pods_Comments.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,9 +139,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84411C5223C0878C009EEC20 /* Build configuration list for PBXNativeTarget "Comments" */;
 			buildPhases = (
+				983B71F40C592AE69E08ADB2 /* [CP] Check Pods Manifest.lock */,
 				84411C3C23C0878A009EEC20 /* Sources */,
 				84411C3D23C0878A009EEC20 /* Frameworks */,
 				84411C3E23C0878A009EEC20 /* Resources */,
+				BACA35BA20AD09D8448ECD79 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -163,6 +200,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		983B71F40C592AE69E08ADB2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Comments-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BACA35BA20AD09D8448ECD79 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Comments/Pods-Comments-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Comments/Pods-Comments-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Comments/Pods-Comments-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		84411C3C23C0878A009EEC20 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -172,6 +251,7 @@
 				84411C4623C0878A009EEC20 /* MainViewController.swift in Sources */,
 				84411C4423C0878A009EEC20 /* AppDelegate.swift in Sources */,
 				84411C5623C0A32B009EEC20 /* CommentsViewController.swift in Sources */,
+				84411C6423C0A9CB009EEC20 /* NetworkService.swift in Sources */,
 				84411C5823C0A420009EEC20 /* CommentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +396,7 @@
 		};
 		84411C5323C0878C009EEC20 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3782FAF0EFCC7A4B2002A04 /* Pods-Comments.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -333,6 +414,7 @@
 		};
 		84411C5423C0878C009EEC20 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEA7A4C0DE8451E235515C3A /* Pods-Comments.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
