@@ -15,11 +15,11 @@ class MainViewController: UIViewController {
     private let networkService = NetworkService()
     private var paginationService: PaginationService!
     
-    //MARK: - Controller lifecycle
+    // MARK: - Controller lifecycle
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
-        doneButton.alpha = 0.4
+        doneButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5), for: .normal)
         doneButton.isEnabled = false
     }
     
@@ -30,14 +30,14 @@ class MainViewController: UIViewController {
         lowerBoundTextField.text = nil
     }
     
-    //MARK: - Navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "FromMainToComments", let vc = segue.destination as? CommentsViewController, let paginationService = sender as? PaginationService else { return }
         
         vc.paginationService = paginationService
     }
     
-    //MARK: - IBAction func
+    // MARK: - IBAction func
     @IBAction private func doneButtonTapped(_ sender: Any) {
         view.endEditing(true)
         
@@ -53,13 +53,13 @@ class MainViewController: UIViewController {
         if lowerBoundTextField.text == "0" {
             lowerBoundTextField.text = "1"
         }
-        doneButton.alpha = 0.4
+        doneButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.5), for: .normal)
         doneButton.isEnabled = false
         if !lowerBoundTextField.text!.isEmpty && !upperBoundTextField.text!.isEmpty {
             guard let start = Int(lowerBoundTextField.text ?? ""),
                 let end = Int(upperBoundTextField.text ?? ""),
                 start < end else { return }
-            doneButton.alpha = 1
+            doneButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .normal)
             doneButton.isEnabled = true
         }
     }
