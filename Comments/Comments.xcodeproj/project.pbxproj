@@ -16,6 +16,7 @@
 		84411C5823C0A420009EEC20 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411C5723C0A420009EEC20 /* CommentTableViewCell.swift */; };
 		84411C6023C0A750009EEC20 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411C5F23C0A750009EEC20 /* Comment.swift */; };
 		84411C6423C0A9CB009EEC20 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411C6323C0A9CB009EEC20 /* NetworkService.swift */; };
+		84411C6B23C22192009EEC20 /* PaginationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84411C6A23C22192009EEC20 /* PaginationService.swift */; };
 		85EDF91252FAC586ECD7DA4F /* Pods_Comments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E78B243CEE2D7EB90909DA9 /* Pods_Comments.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		84411C5723C0A420009EEC20 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		84411C5F23C0A750009EEC20 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		84411C6323C0A9CB009EEC20 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		84411C6A23C22192009EEC20 /* PaginationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginationService.swift; sourceTree = "<group>"; };
 		B3782FAF0EFCC7A4B2002A04 /* Pods-Comments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comments.debug.xcconfig"; path = "Target Support Files/Pods-Comments/Pods-Comments.debug.xcconfig"; sourceTree = "<group>"; };
 		CEA7A4C0DE8451E235515C3A /* Pods-Comments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Comments.release.xcconfig"; path = "Target Support Files/Pods-Comments/Pods-Comments.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 				84411C5A23C0A4EA009EEC20 /* View */,
 				84411C5923C0A4DB009EEC20 /* Controller */,
 				84411C6223C0A99F009EEC20 /* NetworkService */,
+				84411C6A23C22192009EEC20 /* PaginationService.swift */,
 				84411C4A23C0878C009EEC20 /* Assets.xcassets */,
 				84411C4F23C0878C009EEC20 /* Info.plist */,
 			);
@@ -252,6 +255,7 @@
 				84411C4423C0878A009EEC20 /* AppDelegate.swift in Sources */,
 				84411C5623C0A32B009EEC20 /* CommentsViewController.swift in Sources */,
 				84411C6423C0A9CB009EEC20 /* NetworkService.swift in Sources */,
+				84411C6B23C22192009EEC20 /* PaginationService.swift in Sources */,
 				84411C5823C0A420009EEC20 /* CommentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     @IBOutlet private weak var upperBoundTextField: UITextField!
     @IBOutlet private weak var doneButton: UIButton!
     private let networkService = NetworkService()
+    private var paginationService: PaginationService!
     
     //MARK: - Controller lifecycle
     override func viewWillAppear(_ animated: Bool) {
@@ -31,9 +32,9 @@ class MainViewController: UIViewController {
     
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "FromMainToComments", let vc = segue.destination as? CommentsViewController, let comments = sender as? [Comment] else { return }
+        guard segue.identifier == "FromMainToComments", let vc = segue.destination as? CommentsViewController, let paginationService = sender as? PaginationService else { return }
         
-        vc.comments = comments
+        vc.paginationService = paginationService
     }
     
     //MARK: - IBAction func
@@ -44,9 +45,8 @@ class MainViewController: UIViewController {
             let end = Int(upperBoundTextField.text ?? ""),
             start < end else { return }
         
-        networkService.getComments(start: start, end: end) {[weak self] (comments) in
-            self?.performSegue(withIdentifier: "FromMainToComments", sender: comments)
-        }
+        paginationService = PaginationService(start: start, end: end)
+        performSegue(withIdentifier: "FromMainToComments", sender: paginationService)
     }
     
     @IBAction func textFieldEditingChanged(_ sender: Any) {

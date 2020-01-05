@@ -11,6 +11,8 @@ import UIKit
 class CommentsViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     @IBOutlet private weak var errorLabel: UILabel!
+    private let networkService = NetworkService()
+    var paginationService: PaginationService!
     var comments = [Comment]()
     
     //MARK: - Controller lifecycle
@@ -19,8 +21,12 @@ class CommentsViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         
-        if comments.count == 0 {
-            errorLabel.isHidden = false
+        networkService.getComments(start: paginationService.start, end: paginationService.currentEnd) { [weak self] (comments) in
+            self?.comments = comments
+            self?.tableView.reloadData()
+            if comments.count == 0 {
+                self?.errorLabel.isHidden = false
+            }
         }
     }
 }
@@ -39,5 +45,19 @@ extension CommentsViewController: UITableViewDataSource {
         cell.titleLabel.text = comments[indexPath.row].name
         
         return cell
+    }
+}
+
+//MARK: - UITableViewDelegate
+extension CommentsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard !paginationService.isAllUploaded else { return }
+        if indexPath.row == comments.count - 1 {
+            paginationService.updateCurrentValue()
+            networkService.getComments(start: paginationService.currentStart, end: paginationService.currentEnd) { [weak self] (comments) in
+                self?.comments += comments
+                tableView.reloadData()
+            }
+        }
     }
 }
