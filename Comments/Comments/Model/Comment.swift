@@ -9,20 +9,23 @@
 import Foundation
 
 struct Comment {
-    let userId: Int
+    let postId: Int
     let id: Int
-    let title: String
+    let name: String
+    let email: String
     let body: String
     
     init?(fromDict dict: [String: Any]) {
         guard let id = dict["id"] as? Int,
-            let userId = dict["userId"] as? Int,
-            let title = dict["title"] as? String,
+            let postId = dict["postId"] as? Int,
+            let name = dict["name"] as? String,
+            let email = dict["email"] as? String,
             let body = dict["body"] as? String else { return nil }
         
         self.id = id
-        self.userId = userId
-        self.title = title
+        self.postId = postId
+        self.name = name
+        self.email = email
         self.body = body
     }
 }
